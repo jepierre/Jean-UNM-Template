@@ -7,7 +7,36 @@
 
 
 % Logo at frontpage -------------------
-\titlegraphic{\includegraphics[width=5cm]{resources/unm_ece_log.png}}
+\titlegraphic{
+  \begin{tikzpicture}[overlay, remember picture]
+
+    % top center
+    \node[above=2.75cm] at (current page.center){
+      \includegraphics[width=5cm]{resources/unm_ece_log.png}
+    };
+
+    % top left
+    \node[right=0.2cm, yshift=-1cm] at (current page.150){
+      \includegraphics[scale=0.5]{resources/afrl_logo.jpg}
+    };
+
+    % top right
+    \node[left=0.2cm, yshift=-1cm] at (current page.30){
+      \includegraphics[scale=.35]{resources/snl_logo.png}
+    };
+
+    % bottom right
+    \node[left=0.2cm, yshift=1cm] at (current page.330){
+      \includegraphics[scale=.5]{resources/nsf_logo.png}
+    };
+
+    % bottom left
+    \node[right=0.25cm, yshift=1cm] at (current page.210){
+      \includegraphics[scale=.35]{resources/nato.jpg}
+    };
+
+  \end{tikzpicture}
+}
 % Logo at frontpage -------------------
 
 % fonts ----------------
@@ -25,29 +54,36 @@
 % Front page figure -----------------------------
 
 % LOGO in each slide -----------------------------
-% You can choose IFAS logo or FRED logo:
-%\logo{\includegraphics[height=.3cm]{fig/logo_ifas.png}}
-\logo{\includegraphics[height=1.5cm]{fig/logo_fre.png}}
+\logo{\includegraphics[height=1.5cm, scale=0.25]{resources/unm_ece_small_logo.jpg}}
 % LOGO in each slide -----------------------------
 
 % set COLORS -----------------------------
-\definecolor{unm_red}{RGB}{186, 31, 49}
-\definecolor{UFblue}{RGB}{0,33,165} % UF BLUE
-\definecolor{UForange}{RGB}{250,70,22} % UF ORANGE
+% use UNM color palletes
+% https://brand.unm.edu/brand-style/color-palette/index.html
+\definecolor{unm_red}{RGB}{186, 12, 47}
+\definecolor{lobo_gray}{RGB}{99, 102, 106}
+\definecolor{unm_silver}{RGB}{167, 168, 170}
+\definecolor{unm_turquoise}{RGB}{0, 122, 134}
+\definecolor{unm_dark_red}{RGB}{96, 16, 26} % UNM dark red
+% \definecolor{UForange}{RGB}{250,70,22} % UF ORANGE
 %\useoutertheme[subsection=false]{miniframes} %eliminate subsection header by each slide
 \setbeamercolor{title}{fg=unm_red}
 \setbeamercolor{frametitle}{fg=unm_red}
-\usecolortheme[named=beaver]{structure}
+% \usecolortheme[named=beaver]{structure}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+\usefonttheme{structurebold}
 \mode<presentation>
 {
-  \usetheme[compress]{CambridgeUS}
-  \setbeamercolor{upper separation line head}{bg=UForange}
+  % \usetheme[compress]{CambridgeUS}
+  \usetheme{CambridgeUS}
+  \setbeamercolor{upper separation line head}{bg=unm_red}
 
   %\setbeamertemplate{navigation symbols}{}
   %\setbeamertemplate{caption}[numbered]
 }
 \useoutertheme{miniframes} %colors healine
-\setbeamercolor{section in head/foot}{parent=UFblue, fg=UFblue}
+\setbeamercolor{section in head/foot}{parent=lobo_gray, fg=lobo_gray}
 
 \defbeamertemplate*{headline}{miniframes theme no subsection}
 {%
